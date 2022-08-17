@@ -466,9 +466,8 @@ ul {
     margin-bottom: 25px;
 }
 
-
-#map {
-    height: 25vw;
+iframe {
+    height: 29vw;
     width: calc(50vw - 18.5px);
 }
 
