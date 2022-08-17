@@ -1,185 +1,163 @@
-let smallMenu = document.querySelector(".menu__small");
-let condition = true;
-let buttonLines = document.querySelectorAll(".stripe");
+<!DOCTYPE html>
+<html lang="en">
 
-let arrow = document.querySelector('.arrow');
-let marrow = document.querySelector('.marrow');
-let contact = document.querySelector('.contact');
-let mcontact = document.querySelector('.mcontact');
-let contactLink = document.querySelector('.contact-link');
-let mcontactLink = document.querySelector('.mcontact-link');
-let mailling = document.querySelector('.mailling-link');
-let mmailling = document.querySelector('.mmailling-link');
-let contactBlock = document.querySelector('.contacts');
-let mcontactBlock = document.querySelector('.mob-contacts');
-let mnews = document.querySelector('.mnews');
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/anime.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script src="https://vk.com/js/api/openapi.js?169" type="text/javascript"></script>
+</head>
 
-$(".menu__small").on("click", function() {
-    if (condition) {
-        forward();
-    } else {
-        backward();
-    }
-});
+<body>
+    <div class="wrapper">
+        <header class="header" id="header">
+            <div class="container">
+                <div class="header__content">
+                    <div class="header__content-right">
+                        <div class="logo">
+                            KIN<span>
+                                <img src="img/logo.png" alt="logo" class="logo__pic" /></span>NEWS
+                        </div>
+                        <div class="menu__small">
+                            <div class="stripe"></div>
+                            <div class="stripe"></div>
+                            <div class="stripe"></div>
+                        </div>
+                    </div>
+                    <div class="header__content-left">
+                        <nav class="nav">
+                            <ul class="nav__list">
+                                <li class="nav__item">
+                                    <a href="#news" class="nav__item-link">News</a>
+                                </li>
 
+                                <li class="nav__item">
+                                    <a class="nav__item-link contact">Contact</a>
+                                    <div class="arrow">
+                                        <img src="/img/chevron.png" alt="" />
+                                    </div>
+                                    <div class="contacts">
+                                        <a href="#mailling" class="nav__item-link mailling-link">Mailling</a>
+                                        <a href="#contact" class="nav__item-link contact-link">Contact</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main class="main" id="main">
+            <div class="main__content">
+                <div class="main__content-title">
+                    KINONEWS - ВАШЕ УДОБСТВО, НАШЕ СТАРАНИЕ
+                </div>
+                <div class="main__content-desc">
+                    Ежедневно собираем последние новости киноиндустрии , чтобы Вы могли узнавать их одними из первых!
+                </div>
+            </div>
+        </main>
+        <section id="news" class="news">
+            <div class="container">
+                <div class="news__content">
+                    <div class="news__content-header">СВЕЖИЕ НОВОСТИ</div>
 
-function forward() {
-    buttonLines.forEach(function(el, i) {
-        buttonLines[i].classList.toggle("active");
-    });
-    window.scrollTo(0, 0);
-    document.body.style.overflowY = 'hidden';
-    anime({
-        targets: ".menu",
-        translateX: ["-100%", "0"],
-        easing: "easeInOutQuad",
-        direction: "alternate",
-        duration: 1000,
-        loop: false,
-    });
+                    <div class="news__content-switch">
+                        <button class="news__content-switcher active" value="145404816">
+                            RedHeadSound
+                        </button>
+                        <button class="news__content-switcher" value="108468">
+                            Kinopoisk
+                        </button>
+                        <button class="news__content-switcher" value="22554373">
+                            KinoNews.ru™
+                        </button>
+                    </div>
+                </div>
+                <div class="news__content-block">
+                    <div class="notification">
+                        <div class="main__news">
+                            <div class="grup" id=" vk_groups "></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="mailling" class="mailling">
+            <div class="mailling__content">
+                <div class="mailling__content-desc">
+                    Подпишитесь на рассылку наших новостей
+                </div>
 
-    condition = false;
-}
+                <form class="mailling__content-form">
+                    <input type="text" name="" value="" placeholder="Name" />
+                    <input type="text" name="" value="" placeholder="E-mail" />
+                    <button type="button" class="btn">Отправить</button>
+                </form>
+            </div>
+        </section>
+        <footer id="contact" class="footer">
+            <div class="footer__content">
+                <div class="footer__content-left">
+                    <div class="footer__content-left-logo">
+                        <div>
+                            <div class="logo">
+                                KIN<span><img src="img/logo.png" alt="logo" class="logo__pic" /></span>NEWS
+                            </div>
+                            <div class="footer__content-text">
+                                ВАШЕ УДОБСТВО, <br /> НАШЕ СТАРАНИЕ
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer__content-left-desc">
+                        <span>О нас:</span>
+                        <span>Время работы: 10.00 - 22.00</span>
+                    </div>
+                </div>
+                <div class="footer__content-right">
+                    <div id="map">
+                        <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=-118.2504254579544%2C34.14588237961833%2C-118.24837088584901%2C34.14712991260799&amp;layer=mapnik&amp;marker=34.146506148416044%2C-118.2493981719017"
+                            style="border: 1px solid black"></iframe>
+                    </div>
+                    <div class="footer__content-right-inf">
+                        <div>
+                            <span>Контакты:</span>
+                            <span>Телефон: 055666908</span>
+                            <span>Адрес: 001128, Глендейл</span>
+                        </div>
+                        <span>Все права защищены © 2022 by gsaryann</span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <div class="menu">
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a class="nav__item-link mnews">News</a>
+                    </li>
 
-function backward() {
-    document.body.style.overflowY = 'visible';
-    buttonLines.forEach(function(el, i) {
-        buttonLines[i].classList.toggle("active");
-    });
-    anime({
-        targets: ".menu",
-        translateX: ["0", "-100%"],
-        easing: "easeInOutQuad",
-        direction: "alternate",
-        duration: 1000,
-        loop: false,
-    });
+                    <li class="nav__item">
+                        <a class="nav__item-link contact mcontact ">Contact</a>
+                        <div class="arrow marrow">
+                            <img src="/img/chevron.png" alt="" />
+                        </div>
+                        <div class="contacts mob-contacts">
+                            <a class="nav__item-link mmailling-link mailling-link point">Mailling</a>
+                            <a class="nav__item-link mcontact-link contact-link point">Contact</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly" defer></script>
+        <script src="js/script.js"></script>
+    </div>
+</body>
 
-    condition = true;
-}
-
-function initMap() {
-    const uluru = {
-        lat: 34.146124,
-        lng: -118.251142
-    };
-    const map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 13,
-        center: uluru,
-    });
-
-    const marker = new google.maps.Marker({
-        position: uluru,
-        map: map,
-    });
-}
-window.initMap = initMap;
-
-radios = document.querySelectorAll(".news__content-switcher");
-let block = document.querySelector(".notification");
-
-radios.forEach((el) =>
-    el.addEventListener("click", function(e) {
-        radios.forEach((el) => {
-            el.classList.remove('active')
-        })
-        block.classList.add("active");
-        el.classList.add('active')
-        $(".grup").html("");
-
-        let gruvalue = el.value;
-        if (document.body.scrollWidth <= 500) {
-            block.style.width = '300px'
-        }
-        if (document.querySelector(".container").scrollWidth <= 760) {
-            value = 2;
-        } else {
-            value = 1.7;
-        }
-        VK.Widgets.Group(
-            " vk_groups ", {
-                mode: 4,
-                width: block.scrollWidth - 100,
-                height: document.body.scrollHeight / (value * 1.7),
-                wide: 1,
-            },
-            gruvalue
-        );
-    })
-);
-
-window.onload = function() {
-    block.classList.add("active");
-    if (document.body.scrollWidth <= 500) {
-        block.style.width = '300px'
-    }
-    if (document.querySelector(".container").scrollWidth <= 760) {
-        value = 1.2;
-    } else {
-        value = 1.7;
-    }
-    VK.Widgets.Group(
-        " vk_groups ", {
-            mode: 4,
-            width: block.scrollWidth - 100,
-            height: document.body.scrollHeight / (value * 1.5),
-            wide: 1,
-        },
-        145404816
-    );
-};
-
-function handle() {
-    let inputs = document.querySelectorAll("input");
-    let input_values = [];
-    for (let i = 0; i < inputs.length; i++) {
-        input_values.push(inputs[i].value);
-    }
-    alert(input_values)
-}
-let button = document.querySelector('.btn');
-button.addEventListener('click', handle);
-
-
-arrow.addEventListener('click', function() {
-    contactBlock.classList.toggle('active')
-})
-
-contact.addEventListener('click', function() {
-    contactBlock.classList.toggle('active')
-})
-
-contactLink.addEventListener('click', function() {
-    contactBlock.classList.toggle('active')
-})
-
-mailling.addEventListener('click', function() {
-    contactBlock.classList.toggle('active')
-})
-
-//mobile
-
-marrow.addEventListener('click', function() {
-    mcontactBlock.classList.toggle('active')
-})
-
-mcontact.addEventListener('click', function() {
-    mcontactBlock.classList.toggle('active')
-})
-
-mnews.addEventListener('click', function() {
-    backward();
-    setTimeout('document.getElementById("news").scrollIntoView()', 810);
-})
-
-mmailling.addEventListener('click', function() {
-    backward();
-    setTimeout('document.getElementById("mailling").scrollIntoView()', 810);
-    mcontactBlock.classList.toggle('active')
-})
-
-mcontactLink.addEventListener('click', function() {
-    backward();
-    setTimeout('document.getElementById("contact").scrollIntoView()', 810);
-    mcontactBlock.classList.toggle('active')
-})
+</html>
