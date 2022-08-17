@@ -22,6 +22,7 @@ $(".menu__small").on("click", function() {
     }
 });
 
+
 function forward() {
     buttonLines.forEach(function(el, i) {
         buttonLines[i].classList.toggle("active");
