@@ -113,6 +113,10 @@ ul {
     display: flex;
 }
 
+.arrow {
+    height: 7vh;
+}
+
 .arrow img {
     height: 100%;
 }
@@ -191,10 +195,16 @@ ul {
 
 .menu .nav__list {
     flex-direction: column;
+    position: relative;
+}
+
+.menu .nav__item {
+    position: relative;
 }
 
 .menu .nav__item-link {
     color: black;
+    font-size: 2em;
 }
 
 .contacts {
@@ -218,8 +228,36 @@ ul {
     cursor: pointer;
 }
 
-.menu .nav__item {
-    color: black;
+.menu .contacts.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 121%;
+    right: 0;
+    background: none;
+    border: none;
+}
+
+.menu .nav {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -72%);
+}
+
+.point {
+    position: relative;
+}
+
+.point:hover::after {
+    content: "";
+    height: 26px;
+    width: 26px;
+    background-color: red;
+    position: absolute;
+    top: 8px;
+    left: -27px;
 }
 
 .stripe {

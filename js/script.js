@@ -1,11 +1,18 @@
 let smallMenu = document.querySelector(".menu__small");
 let condition = true;
 let buttonLines = document.querySelectorAll(".stripe");
+
 let arrow = document.querySelector('.arrow');
+let marrow = document.querySelector('.marrow');
 let contact = document.querySelector('.contact');
+let mcontact = document.querySelector('.mcontact');
 let contactLink = document.querySelector('.contact-link');
+let mcontactLink = document.querySelector('.mcontact-link');
 let mailling = document.querySelector('.mailling-link');
+let mmailling = document.querySelector('.mmailling-link');
 let contactBlock = document.querySelector('.contacts');
+let mcontactBlock = document.querySelector('.mob-contacts');
+let mnews = document.querySelector('.mnews');
 
 $(".menu__small").on("click", function() {
     if (condition) {
@@ -84,7 +91,7 @@ radios.forEach((el) =>
             block.style.width = '300px'
         }
         if (document.querySelector(".container").scrollWidth <= 760) {
-            value = 1.2;
+            value = 2;
         } else {
             value = 1.7;
         }
@@ -101,7 +108,6 @@ radios.forEach((el) =>
 );
 
 window.onload = function() {
-    arrow.style.height = document.querySelector('.logo__pic').offsetHeight + 'px';
     block.classList.add("active");
     if (document.body.scrollWidth <= 500) {
         block.style.width = '300px'
@@ -133,6 +139,11 @@ function handle() {
 let button = document.querySelector('.btn');
 button.addEventListener('click', handle);
 
+
+arrow.addEventListener('click', function() {
+    contactBlock.classList.toggle('active')
+})
+
 contact.addEventListener('click', function() {
     contactBlock.classList.toggle('active')
 })
@@ -143,4 +154,31 @@ contactLink.addEventListener('click', function() {
 
 mailling.addEventListener('click', function() {
     contactBlock.classList.toggle('active')
+})
+
+//mobile
+
+marrow.addEventListener('click', function() {
+    mcontactBlock.classList.toggle('active')
+})
+
+mcontact.addEventListener('click', function() {
+    mcontactBlock.classList.toggle('active')
+})
+
+mnews.addEventListener('click', function() {
+    backward();
+    setTimeout('document.getElementById("news").scrollIntoView()', 810);
+})
+
+mmailling.addEventListener('click', function() {
+    backward();
+    setTimeout('document.getElementById("mailling").scrollIntoView()', 810);
+    mcontactBlock.classList.toggle('active')
+})
+
+mcontactLink.addEventListener('click', function() {
+    backward();
+    setTimeout('document.getElementById("contact").scrollIntoView()', 810);
+    mcontactBlock.classList.toggle('active')
 })
