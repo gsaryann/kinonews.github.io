@@ -6,10 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/feedback.css" />
     <script src="js/anime.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://vk.com/js/api/openapi.js?169" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
     <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
 </head>
@@ -20,10 +19,10 @@
             <div class="container">
                 <div class="header__content">
                     <div class="header__content-right">
-                        <div class="logo">
+                        <a href="/" class="logo">
                             KIN<span>
                                 <img src="img/logo.png" alt="logo" class="logo__pic" /></span>NEWS
-                        </div>
+                        </a>
                         <div class="menu__small">
                             <div class="stripe"></div>
                             <div class="stripe"></div>
@@ -34,9 +33,8 @@
                         <nav class="nav">
                             <ul class="nav__list">
                                 <li class="nav__item">
-                                    <a href="#news" class="nav__item-link">News</a>
+                                    <a href="/#news" class="nav__item-link">News</a>
                                 </li>
-
 
                                 <li class="nav__item">
                                     <a class="nav__item-link contact">Contact</a>
@@ -56,54 +54,62 @@
             </div>
         </header>
         <main class="main" id="main">
-            <div class="main__content">
-                <div class="main__content-title">
-                    KINONEWS - ВАШЕ УДОБСТВО, НАШЕ СТАРАНИЕ
-                </div>
-                <div class="main__content-desc">
-                    Ежедневно собираем последние новости киноиндустрии , чтобы Вы могли узнавать их одними из первых!
+            <div class="feedback">
+                <div class="container">
+                    <h2 class="feedback__title">Заполните форму для обращения</h2>
+                    <form action="" class="form">
+                        <div class="user">
+                            <ul class="user__info">
+                                <li class="user__info-item">
+                                    <label for="name">
+                                        Ф.И.О.
+                                    </label>
+                                    <input type="text" name="" id="name" placeholder="Введите ваше ФИО" required>
+                                </li>
+                                <li class="user__info-item">
+                                    <label for="email">
+                                        E-mail
+                                    </label>
+                                    <input type="email" name="" id="email" placeholder="Введите e-mail" required>
+                                </li>
+                            </ul>
+                            <ul class="address__data">
+                                <li class="user__info-item">
+                                    <label for="adssress">Укажите ваш адрес</label>
+                                    <input type="text" id="address" placeholder="Введите ваш адрес" required>
+                                </li>
+                                <li class="user__info-item">
+                                    <label for="date">Укажите дату обращения</label>
+                                    <input type="date" name="" id="date">
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="partners">
+                            <ul class="partners__info">
+                                <h3 class="partners__h3">Хотите ли вы стать нашим партнером?</h3>
+                                <li class="partner__info-item">
+                                    <label for="yes">
+                                        Да?
+                                    </label>
+                                    <input type="radio" name="" id="yes" required>
+
+                                    <label for="no">
+                                        Нет?
+                                    </label>
+                                    <input type="radio" name="" id="no" required>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="comment">
+                            <label for="comment">Оставьте свой комментарий</label>
+                            <textarea name="" id="comment" cols="30" rows="10" placeholder="Ваш комментарий" required></textarea>
+                            <button class="button" type="submit">Отправить</button>
+                        </div>
+
+                    </form>
                 </div>
             </div>
         </main>
-        <section id="news" class="news">
-            <div class="container">
-                <div class="news__content">
-                    <div class="news__content-header">СВЕЖИЕ НОВОСТИ</div>
-
-                    <div class="news__content-switch">
-                        <button class="news__content-switcher active" value="145404816">
-                            RedHeadSound
-                        </button>
-                        <button class="news__content-switcher" value="108468">
-                            Kinopoisk
-                        </button>
-                        <button class="news__content-switcher" value="22554373">
-                            KinoNews.ru™
-                        </button>
-                    </div>
-                </div>
-                <div class="news__content-block">
-                    <div class="notification">
-                        <div class="main__news">
-                            <div class="grup" id=" vk_groups "></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="mailling" class="mailling">
-            <div class="mailling__content">
-                <div class="mailling__content-desc">
-                    Подпишитесь на рассылку наших новостей
-                </div>
-
-                <form class="mailling__content-form">
-                    <input type="text" name="" value="" placeholder="Name" />
-                    <input type="text" name="" value="" placeholder="E-mail" />
-                    <button type="button" class="btn">Отправить</button>
-                </form>
-            </div>
-        </section>
         <div class="partners">
             <div class="partners__title">Наши партнеры</div>
             <div class="slider">
@@ -140,7 +146,7 @@
                             <span>Контакты:</span>
                             <span>Телефон: 055666908</span>
                             <span>Адрес: 001128, Глендейл</span>
-                            <span><a href="/feedback.html">Тех. поддержка</a></span>
+                            <span><a class="feed" href="/feedback.html">Тех. поддержка</a></span>
                         </div>
                         <span>Все права защищены © 2022 by gsaryann</span>
                     </div>
@@ -151,7 +157,7 @@
             <nav class="nav">
                 <ul class="nav__list">
                     <li class="nav__item">
-                        <a class="nav__item-link mnews">News</a>
+                        <a href="/#news" class="nav__item-link mnews">News</a>
                     </li>
 
                     <li class="nav__item">
@@ -160,15 +166,15 @@
                             <img src="/img/chevron.png" alt="" />
                         </div>
                         <div class="contacts mob-contacts">
-                            <a class="nav__item-link mmailling-link mailling-link point">Mailling</a>
-                            <a href="/feedback.html" class="nav__item-link mfeddback feedback point">Feedback</a>
-                            <a class="nav__item-link mcontact-link contact-link point">Contact</a>
+                            <a href="/#mailling" class="nav__item-link mmailling-link mailling-link point">Mailling</a>
+                            <a href="/feedback.html" class="nav__item-link .feedback point">Feedback</a>
+                            <a href="/#contact" class="nav__item-link mcontact-link contact-link point">Contact</a>
                         </div>
                     </li>
                 </ul>
             </nav>
         </div>
-        <script src="js/script.js"></script>
+        <script src="js/feedback.js"></script>
     </div>
 </body>
 

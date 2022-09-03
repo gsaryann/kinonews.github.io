@@ -64,70 +64,6 @@ function backward() {
     condition = true;
 }
 
-radios = document.querySelectorAll(".news__content-switcher");
-let block = document.querySelector(".notification");
-
-radios.forEach((el) =>
-    el.addEventListener("click", function(e) {
-        radios.forEach((el) => {
-            el.classList.remove('active')
-        })
-        block.classList.add("active");
-        el.classList.add('active')
-        $(".grup").html("");
-
-        let gruvalue = el.value;
-        // if (document.body.scrollWidth <= 500) {
-        //     block.style.width = '300px'
-        // }
-        if (document.querySelector(".container").scrollWidth <= 760) {
-            value = 2;
-        } else {
-            value = 1.7;
-        }
-        VK.Widgets.Group(
-            " vk_groups ", {
-                mode: 4,
-                width: block.offsetWidth,
-                height: document.body.scrollHeight / (value * 1.7),
-                wide: 1,
-            },
-            gruvalue
-        );
-    })
-);
-
-window.onload = function() {
-    block.classList.add("active");
-    // if (document.body.scrollWidth <= 500) {
-    //     block.style.width = '300px'
-    // }
-    if (document.querySelector(".container").scrollWidth <= 760) {
-        value = 1.2;
-    } else {
-        value = 1.7;
-    }
-    VK.Widgets.Group(
-        " vk_groups ", {
-            mode: 4,
-            width: block.offsetWidth,
-            height: document.body.scrollHeight / (value * 1.5),
-            wide: 1,
-        },
-        145404816
-    );
-};
-
-function handle() {
-    let inputs = document.querySelectorAll("input");
-    let input_values = [];
-    for (let i = 0; i < inputs.length; i++) {
-        input_values.push(inputs[i].value);
-    }
-    alert(input_values)
-}
-let button = document.querySelector('.btn');
-button.addEventListener('click', handle);
 
 
 arrow.addEventListener('click', function() {
@@ -162,24 +98,20 @@ mcontact.addEventListener('click', function() {
 
 mnews.addEventListener('click', function() {
     backward();
-    setTimeout('document.getElementById("news").scrollIntoView()', 810);
     mcontactBlock.classList.toggle('active')
 })
 
 mmailling.addEventListener('click', function() {
     backward();
-    setTimeout('document.getElementById("mailling").scrollIntoView()', 810);
     mcontactBlock.classList.toggle('active')
 })
 
 mcontactLink.addEventListener('click', function() {
     backward();
-    setTimeout('document.getElementById("contact").scrollIntoView()', 810);
     mcontactBlock.classList.toggle('active')
 })
 
 mfeedback.addEventListener('click', function() {
     backward();
-    setTimeout('document.getElementById("contact").scrollIntoView()', 810);
     mcontactBlock.classList.toggle('active')
 })
